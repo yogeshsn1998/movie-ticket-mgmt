@@ -1,0 +1,32 @@
+<form [formGroup]="movieForm" (ngSubmit)="addMovie()" *ngIf="addMovieToggle">
+    <table>
+        <tbody>
+            <tr>
+                <td><p>Movie Name: </p></td>
+                <td><input type="text" id="name" formControlName="name"></td>
+            </tr>
+            <tr>
+                <td><p>Language: </p></td>
+                <td><input type="text" id="lang" formControlName="lang"></td>
+            </tr>
+            <tr>
+                <td><p>Year: </p></td>
+                <td><input type="number" id="year" formControlName="year"></td>
+            </tr>
+            <tr>
+                <td><p>Price: </p></td>
+                <td><input type="number" id="price" formControlName="price"></td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="submit" [disabled]="!movieForm.valid">Add Movie</button>
+</form>
+<button type="button" *ngIf="!addMovieToggle" (click)="toggleForm()">Add Movie</button>
+
+  <div *ngFor="let movie of movieList" class="card">
+    <h1>{{movie.name}}</h1>
+    <p>{{movie.lang}}</p>
+    <p class="price">{{movie.price | currency:'INR'}}</p>
+    <p>{{movie.year}}</p>
+    <p><button>Book Ticket</button></p>
+  </div>
