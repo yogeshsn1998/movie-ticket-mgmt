@@ -1,5 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { UserService } from './user.service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,7 @@ export class AuthService {
 
   isLoggedIn: boolean = false;
 
+  router: Router=inject(Router)
 
   login(username: string, password: string) {
     let user = this.userService.userList.find(user => user.username === username && user.password === password);
@@ -22,5 +24,8 @@ export class AuthService {
     return user;
   }
 
+  logout(){
+    this.isLoggedIn = false;
+  }
 
 }

@@ -1,6 +1,6 @@
 import { Component, ElementRef, inject, ViewChild } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -16,8 +16,19 @@ export class LoginComponent {
   password!: ElementRef;
 
   authService: AuthService = inject(AuthService);
-  
-  router: Router=inject(Router)
+
+  router: Router = inject(Router)
+  activatedRoute: ActivatedRoute = inject(ActivatedRoute);
+
+  ngOnInit(){
+    this.activatedRoute.queryParamMap.subscribe((queries)=>{
+      let logout = Boolean(queries.get("logout"));
+
+      if(logout){
+        this.authService.logout();
+      }
+    })
+  }
 
   authenticate() {
     const username = this.username.nativeElement.value;
@@ -25,12 +36,11 @@ export class LoginComponent {
 
     let user = this.authService.login(username, password);
 
-    if(user === undefined){
+    if (user === undefined) {
       alert('Login failed');
-    } else{
-      alert('Login successful. Welcome! '+ user.name);
+    } else {
+      alert('Login successful. Welcome! ' + user.name);
       this.router.navigate(['/']);
-
     }
 
   }

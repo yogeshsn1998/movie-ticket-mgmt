@@ -8,10 +8,11 @@
     <div class="navbar-nav">
         <a class=" d-flex nav-item nav-link active" routerLink="/">Home </a>
         <a class="d-flex nav-item nav-link" routerLink="/addMovie">Add Movie</a>
-    </div>
+    </div>  
     <div class="navbar-nav">
         <a class="d-flex nav-item nav-link" routerLink="/login">Login</a>
-        <a class="d-flex nav-item nav-link" routerLink="/addMovie">Logout</a>
+        <a class="d-flex nav-item nav-link" routerLink="/login" [queryParams]="{logout:true}">Logout</a>
+        <!-- [queryParams]="{logout:true}" -->
       </div>
   </div>
 </nav>

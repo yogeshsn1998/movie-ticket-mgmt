@@ -18,8 +18,6 @@ export class MovieService {
   }
   
  addMovie(movie: any){
-      console.log("inside add serv")
-
     this.movieList.push(movie);
     console.log(this.movieList)
   }
