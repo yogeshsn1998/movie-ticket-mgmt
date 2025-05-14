@@ -25,9 +25,14 @@ export class AddMovieComponent {
   ) { }
 
   addMovie() {
-    console.log("inside add comp")
     this.movieService.addMovie(this.movieForm.value)
     this.router.navigate(['/']);
+  }
 
+  canExit(){
+    if(this.movieForm.value.name || this.movieForm.value.lang || this.movieForm.value.year||this.movieForm.value.price){
+      return confirm("Data is not saved. Do you want to navigate avay from the page?");
+    }
+    return true;
   }
 }

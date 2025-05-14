@@ -7,7 +7,10 @@ import { CanActivate } from './auth.guard';
 export const routes: Routes = [{
     path: 'addMovie',
     component: AddMovieComponent,
-    canActivate: [CanActivate]
+    canActivate: [CanActivate],
+    canDeactivate: [(comp: AddMovieComponent) => {
+        return comp.canExit();
+    }]
 },
 {
     path: 'login',
