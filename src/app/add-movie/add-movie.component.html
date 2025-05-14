@@ -1,29 +1,29 @@
-<form [formGroup]="movieForm" (ngSubmit)="addMovie()">
+<form [formGroup]="movieForm" class="mx-auto p-3" (ngSubmit)="addMovie()">
     <table>
         <tbody>
             <tr>
                 <td>
                     <p>Movie Name: </p>
                 </td>
-                <td><input type="text" id="name" formControlName="name"></td>
+                <td><input type="text" id="name" class="form-control" formControlName="name"></td>
             </tr>
             <tr>
                 <td>
                     <p>Language: </p>
                 </td>
-                <td><input type="text" id="lang" formControlName="lang"></td>
+                <td><input type="text" id="lang" class="form-control" formControlName="lang"></td>
             </tr>
             <tr>
                 <td>
                     <p>Year: </p>
                 </td>
-                <td><input type="number" id="year" formControlName="year"></td>
+                <td><input type="number" id="year" class="form-control" formControlName="year"></td>
             </tr>
             <tr>
                 <td>
                     <p>Price: </p>
                 </td>
-                <td><input type="number" id="price" formControlName="price"></td>
+                <td><input type="number" id="price" class="form-control" formControlName="price"></td>
             </tr>
         </tbody>
     </table>

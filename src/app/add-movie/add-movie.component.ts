@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
-import { MovieService } from '../movie.service';
+import { MovieService } from '../services/movie.service';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 

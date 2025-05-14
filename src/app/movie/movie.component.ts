@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { MovieService } from '../movie.service';
+import { MovieService } from '../services/movie.service';
 
 @Component({
   selector: 'app-movie',

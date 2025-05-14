@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Movie } from '../models/movie';
 
 @Injectable({
   providedIn: 'root'
@@ -6,10 +7,10 @@ import { Injectable } from '@angular/core';
 export class MovieService {
 
   constructor() { }
-  movieList: { name: string, lang: string, year: number, price: number }[] = [
-    { name: 'Movie 1', lang: 'English', year:2024, price: 200 },
-    { name: 'Movie 2', lang: 'Tamil', year:2024, price: 300 },
-    { name: 'Movie 3', lang: 'English', year:2024, price: 100 }
+  movieList: Movie[] = [
+    new Movie('Movie 1', 'English', 2024, 200 ),
+    new Movie('Movie 2', 'Tamil', 2024, 300 ),
+    new Movie('Movie 3', 'Hindi', 2024, 100 )
   ];
 
   getAllMovies(){
