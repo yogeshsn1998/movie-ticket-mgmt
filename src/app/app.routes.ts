@@ -18,6 +18,7 @@ export const routes: Routes = [{
 },
 {
     path: '**',
-    component: MovieComponent
+    component: MovieComponent,
+    canActivate: [CanActivate]
 }
 ];
